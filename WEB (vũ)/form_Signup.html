@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Đăng ký </title>
+    <link rel="shortcut icon" href="guitar-icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="form.css" />
+    <link rel="stylesheet" href="./cc/fontawesome-free-6.4.2-web/css/all.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <script src="js/admin.js"></script> 
+    
+  </head>
+  <body>
+    <div class="cont" id="content">
+      <div class="form__auth">
+        <form action="" class="form" id="form-1">
+          <div class="btn__exit-button" id="close">
+            <!--<i class="fa-solid fa-xmark exit-icon" style="color: #292929"></i> -->
+            <a href="index.html"> <i class="fa fa-reply" aria-hidden="true"></i> Thoát </a>
+
+          </div>
+          <div class="header">
+            <i class="fa-solid fa-circle-user header-icon"></i>
+            <p class="header__text">ĐĂNG KÍ</p>
+          </div>
+          <div class="line"></div>
+          <div class="form__wrapper">
+            <div class="form__input">
+              <input
+                type="text"
+                id="fullname"
+                name="fullname"
+                class="form__wrapper-input"
+                placeholder="Nhập Họ và tên"
+              />
+              <i
+                class="fa-solid fa-signature form__icon"
+                style="color: #292929"
+              ></i>
+              <span class="form__message"></span>
+            </div>
+            <div class="form__input">
+              <input
+                type="numberic"
+                id="username"
+                name="username"
+                class="form__wrapper-input"
+                pattern="[0][0-9]{10}"
+                placeholder="Nhập Số Điện Thoại"
+              />
+              <i
+                class="fa-solid fa-phone form__icon"
+                style="color: #292929"
+              ></i>
+              <span class="form__message"></span>
+            </div>
+            <div class="form__input">
+              <input
+                type="text"
+                id="email"
+                name="email"
+                class="form__wrapper-input"
+                placeholder="Nhập Email"
+              />
+              <i
+                class="fa-solid fa-envelope form__icon"
+                style="color: #292929"
+              ></i>
+              <span class="form__message"></span>
+            </div>
+            <div class="form__input">
+              <input
+                type="password"
+                id="Password"
+                name="password"
+                class="form__wrapper-input"
+                placeholder=" Nhập Mật Khẩu"
+                oninput="validatePassword()"
+              />
+              <i
+                class="fa-solid fa-eye form__icon"
+                id="iconPWD_hide"
+                style="color: #292929"
+              ></i>
+              <i
+                class="fa-solid fa-eye-slash form__icon"
+                id="iconPWD"
+                style="color: #292929"
+              ></i>
+              <span class="form__message"></span>
+            </div>
+            <div class="form__input">
+              <input
+                type="password"
+                id="ConfirmPassword"
+                name="confirmPassword"
+                class="form__wrapper-input"
+                placeholder=" Xác nhận Mật Khẩu"
+              />
+             
+              <span class="form__message"></span>
+            </div>
+          </div>
+          <!-- <div class="check">
+            <input type="checkbox" name="check" id="check" />
+            <p>Tôi đồng ý với các</p>
+            <a href="" class="check__link">Điều khoản sử dụng </a>
+            <p>và</p>
+            <a href="" class="check__link">Chính sách bảo mật. </a>
+          </div> -->
+          <div class="btn">
+            <input
+              class="btn__submit"
+              id="register_btn"
+              onclick="register()"
+              type="submit"
+              value="Đăng Kí"
+            />
+          </div>
+          <div class="footer">
+            <div>
+              <p class="footer__text">Bạn đã có tài khoản?</p>
+            </div>
+            <div>
+              <a href="form_Login.html" class="footer__sign">Đăng Nhập</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="form.js"></script>
+    <script src="validator.js"></script>
+    <script>
+      Validator({
+        form: "#form-1",
+        errorSelector: ".form__message",
+        rules: [
+          Validator.isPhoneNumber("#username"),
+          Validator.isEmail("#email"),
+          Validator.isPassword("#newPassword", 8),
+        ],
+      });
+    </script>
+    <script>
+      function validatePassword() {
+       
+          var passwordInput = document.getElementById('Password');
+          
+          var passwordMessage = document.getElementById('passwordMessage');
+          console.log(passwordMessage);
+          // Kiểm tra mật khẩu có ít nhất 6 ký tự
+          if (passwordInput.value.length >= 6) {
+              passwordMessage.textContent = ''; // Xóa thông báo nếu hợp lệ
+          } else {
+              passwordMessage.textContent = 'Mật khẩu phải có ít nhất 6 ký tự';
+          }
+      }
+  
+      function togglePasswordVisibility() {
+          var passwordInput = document.getElementById('Password');
+          var iconPWDHide = document.getElementById('iconPWD_hide');
+          var iconPWD = document.getElementById('iconPWD');
+  
+          if (passwordInput.type === 'password') {
+              passwordInput.type = 'text';
+              iconPWDHide.style.display = 'block';
+              iconPWD.style.display = 'none';
+          } else {
+              passwordInput.type = 'password';
+              iconPWDHide.style.display = 'none';
+              iconPWD.style.display = 'block';
+          }
+      }
+    </script>
+      
+  </body>
+</html>

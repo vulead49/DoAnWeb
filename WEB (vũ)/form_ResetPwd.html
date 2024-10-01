@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="./cc/fontawesome-free-6.4.2-web/css/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+			rel="stylesheet"
+		/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class="cont" id="content">
+        
+        <div class="form__auth">
+            
+            <form action="" class="form" id="form-1">
+                
+                <div class="btn__exit-button" id="close">
+                    <i class="fa-solid fa-xmark exit-icon" style="color: #292929;" ></i>
+                 </div>
+                <div class="header">
+                    <p>KHÔI PHỤC MẬT KHẨU</p>
+                </div>
+                <div class="line"></div>
+                <div class="form__wrapper">
+                    <div class="form__input">
+                        <input type="text" id="username" name="username" class="form__wrapper-input" placeholder="Nhập Số Điện Thoại">
+                        <i class="fa-solid fa-phone form__icon" style="color: #292929;"></i>
+                        <span class="form__message"></span>
+                    </div>
+                    <div class="form__input">
+                        <input type="text" id="email" name="email" class="form__wrapper-input" placeholder="Nhập Email">
+                        <i class="fa-solid fa-envelope form__icon" style="color: #292929;"></i>
+                        <span class="form__message"></span>
+                    </div>
+                    <div class="form__input">
+                        <input type="text" id="newPassword" name="newPassword" class="form__wrapper-input" placeholder="Nhập Mật Khẩu Mới"> 
+                        <i class="fa-solid fa-key form__icon" style="color: #292929;"></i>
+                        <span class="form__message"></span>
+                    </div>
+                    <div class="verifi">
+                        <input type="text" class="verifi__captcha input_captcha" id="verifi" placeholder="Nhập Mã Xác Minh"></i>
+                        <i class="fa-solid fa-rotate-right fa-rotate-90" style="color: #292929;"></i>
+                        <div class="verifi__captcha inner_captcha" id="captcha"></div>
+                        <span class="form__message "></span>
+                    </div>
+                </div>
+                <div class="btn">
+                    <input class="btn__submit" type="submit" value="xác nhận">
+                </div>
+                
+                <div class="footer">
+                    <div>
+                        <p class=" footer__text">Trở về</p>
+                    </div>
+                    <div>
+                        <a href="form_Login.html" class="footer__sign" >Đăng Nhập</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="captcha.js"></script>
+    <script src="form.js"></script>
+    <script src="validator.js"></script>
+    <script>
+        Validator({
+            form: "#form-1",
+            errorSelector: ".form__message",
+            rules: [
+                Validator.isPhoneNumber("#username"),
+                Validator.isEmail("#email"),
+                Validator.isPassword("#newPassword", 8),
+
+            ]
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src=""></script>
+    <link rel="shortcut icon" href="guitar.ico" type="image/x-icon">
+    <title>Guitar Shop</title>
+    <link rel="stylesheet" href="category.html">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="js/acount.js"></script>
+    <script src="js/admin.js"></script>
+   
+</head>
+<body >
+
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            loadData();
+        });
+    </script>
+   <!-- <div class="main">
+
+    <div class="menu">
+    <li><a class="item-link" href=""></a></li>
+    <li><a class="item-link" href=""></a></li>
+    <li><a class="item-link"href=""></a></li>
+    <li><a class="item-link"href=""></a></li>
+
+    </div> -->
+    <header>
+            
+             
+        <a class="logo" href="index.html">GUITAR<span>.</span></a>
+
+        <div class="menu">
+            <li><a href="index.html" class="item">Trang chủ</a></li>
+            <!-- <li> <a  href="gioithieu.html">Giới thiệu</a> -->
+                
+            </li>
+            <li class="item">
+                <a class="item-link" href=""onclick="changeRoll()">Guitar acoustic</a> 
+                <ul class="sub-menu">
+                    <li class="sub-item"><a class="sub-item-link" href="" onclick="changeRoll()">Taylor</a></li>
+                    <li class="sub-item"><a class="sub-item-link" href=""onclick="changeRoll()">Fender-acoustic</a></li>
+                    <li class="sub-item"><a class="sub-item-link" href=""onclick="changeRoll()">Takamine-acoustic</a></li>
+                    <li class="sub-item"><a class="sub-item-link" href=""onclick="changeRoll()">Suzuki</a></li>
+                </ul> 
+            </li>
+            <li class="item">
+                <a class="item-link" href="" onclick="changeRoll()">Guitar classic</a> 
+                <ul class="sub-menu">
+                    <li class="sub-item"><a class="sub-item-link" href=""onclick="changeRoll()">Ortega</a></li>
+                    <li class="sub-item"><a class="sub-item-link" href=""onclick="changeRoll()">Takamine-classic</a></li>
+                    <li class="sub-item"><a class="sub-item-link" href=""onclick="changeRoll()">Fender-classic</a></li>
+                    <li class="sub-item"><a class="sub-item-link" href=""onclick="changeRoll()">Cordoba</a></li>
+                
+                </ul>
+            </li>
+            <li class="item">
+                <a class="item-link" href=""onclick="changeRoll()">Guitar điện</a> 
+                <ul class="sub-menu">
+                    <li class="sub-item"><a class="sub-item-link" href=""onclick="changeRoll()">Fender-điện</a></li>
+                    <li class="sub-item"><a class="sub-item-link" href=""onclick="changeRoll()">Jackson</a></li>
+                    <li class="sub-item"><a class="sub-item-link" href=""onclick="changeRoll()">Squier</a></li>
+                    <li class="sub-item"><a class="sub-item-link" href=""onclick="changeRoll()">Charvel</a></li>
+                
+                </ul>
+            </li>
+        
+            
+        </div>
+        <div class="others">
+            
+            <div class="others-search">
+                <input type="text" placeholder="Tìm kiếm" id="search" class="others__search-inp " style="color: #000">
+                <div class="btn-search" ><i class="fas fa-search"></i></div>    
+            </div>
+            <li>
+                <a class="" href="form_Login.html">
+                    <i class="fa fa-user"></i>
+                    <span class="others-usrname">Đăng nhập</span>
+                </a>
+            </li>
+            <li> <a  href="cart.html">
+                <i class="fa fa-shopping-bag"></i>
+                </a> 
+            </li>
+            <li class="others-bars"> 
+                <a class="fa fa-list-ul" href=""></a>
+                    <ul class="sub-list">
+                        <li> <a  href="acount.html">
+                            <i class="fa-solid fa-user" style="color: #000000;"></i>
+                             Tài khoản </a> 
+                    </li>
+                        <li> <a  href="" onclick="logout()">
+                                <i class="fa fa-sign-out-alt"></i>
+                                đăng xuất </a> 
+                        </li>
+                    </ul>
+                </li>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+    <!--- <span id="hamburger-btn"><i class="fa-solid fa-bars" style="color: #000000;"></i></span>   -->
+        
+    </header>
+
+ <section>
+    <div class="acount">
+        <div class="form_left">
+            <h3>TÀI KHOẢN</h3>
+            <ul>
+                <li><a href="acount.html">Thông tin tài khoản</a></li>
+                <li><a href="change_password.html">Đổi mật khẩu</a></li>
+                <li><a href="change_orther.html">Quản lí đơn hàng</a></li>
+                <li><a href="index.html" onclick="logout()">Đăng xuất</a></li>
+            </ul>
+        </div>
+        <div class="form_right">
+            <h3>THÔNG TIN TÀI KHOẢN</h3>
+            <ul>
+                <li>Họ và tên <br><input id="name" type="text" placeholder="Nhập tên..."></li>
+                <li>Số điện thoại <br><input id="phone" type="numberic" placeholder="Nhập số điện thoại..." pattern="[0][0-9]{9}"></li>
+                <li>Địa chỉ <br><input id="address" type="text" placeholder="Nhập địa chỉ..."></li>
+            </ul>
+            <button onclick="handleUpdate()">Cập nhật</button>
+        </div>
+    </div>
+    
+ </section>
+    
+<section class="app-container">
+    
+    <p>Tải ứng dụng GuiApp</p>
+    <div class="app-google">
+        <img src="CH.jpg" alt="">
+
+        <img src="appstore.jpg" alt="">
+    </div>
+    <!-- <p>Nhận bản tin </p>
+    <input type="text" placeholder="Nhập email của bạn..."> -->
+</section>
+<div class="footer-top">
+    <!-- <li><a href=""><img src="bocongthuong.jpg" alt=""></a></li> -->
+    <li><a href=""></a>
+        <h4 class="mrgb25">
+            TUYỂN DỤNG
+        </h4>
+        <div class="add mrgb10">
+            Điện thoại: 0246.329.1102 
+
+
+        </div>
+        <div class="add mrgb10">Email: contact@fullstack.edu.vn</div>
+    </li>
+    <li><a href=""></a>
+        <h4 class="mrgb25">
+            GIỚI THIỆU
+        </h4>
+        <div class="add mrgb10">
+            Mã số thuế: 0109922901 <br>
+<!-- 
+<br>
+
+
+<br>
+F8 xây dựng và phát triển những sản phẩm <br>
+mang lại giá trị cho cộng đồng. -->
+        </div>
+        <div class="add mrgb10">Ngày thành lập: 04/03/2022</div>
+        <div class="add mrgb10">Lĩnh vực: Công nghệ, giáo dục, lập trình.</div>
+    </li> 
+    <li><a href=""></a>
+        <h4 class="mrgb25">
+            LIÊN HỆ
+        </h4>
+
+        <div class="add mrgb10">Store I: 445 Sư Vạn Hạnh, P.12, Q.10.</div>
+        <div class="add mrgb10">Store II: 48 Trần Quang Diệu, P.14, Q.3, TP.HCM</div>
+        <div class="add mrgb10">Store III: 463 Quang Trung, P.10, Q.Gò Vấp, TP.HCM</div>
+        <div class="add mrgb10">Store IV: G-Town 1, 350 Điện Biên Phủ, P.17, Q.Bình Thạnh, TP.HCM</div>
+        <div class="add mrgb10">Store V: G-Town 2, 136 Nguyễn Hồng Đào, P.14, Q.Tân Bình, TP.HCM</div>
+        <div class="add mrgb10">Store VI: TNP 26LTT - 26 Lý Tự Trọng, P.Bến Nghé, Q.1, TP.HCM</div>
+        <div class="add mrgb10">Store VII: TNP - Sense Market, Đối diện số 90 Lê Lai, P.Bến Nghé, Q.1, TP.HCM.</div>
+    </li> 
+    <li>
+        <h4 class="mrgb25">
+            FOLLOW US
+
+        </h4>
+       <div>
+        <a href="" class="fab fa-facebook-f"></a>
+        <a href="" class="fab fa-twitter"></a>
+        <a href="" class="fab fa-youtube"></a>
+       </div>
+    </li>
+</div>
+<div class="footer-center">
+    <p>Công ty cổ phần với số đăng ký kinh doanh:0123456789 <br>
+        Địa chỉ đăng ký: Đường Bình Tiên, Quận 6, TP.HCM, Việt Nam -0987654321 <br>
+        Đặt hàng online: <b>1234567890</b>
+        </p>
+</div>
+    
+    <div class="footer-bottom">
+        @GUITAR All rights reserved
+    </div>
+
+    <div id="modal" class="">
+        <div class="modal__content">
+            <div class="modal__header">
+                <div class="modal__close">
+                    <i class="fa fa-close"></i>
+                </div>
+            </div>
+            <div class="modal__body" id="modal__body">
+            
+            </div>
+        </div>
+        <!-- <div class="modal__overlay"></div> -->
+    </div>
+    <div id="toast"></div>
+</body>
+<script>
+
+function changeRoll() {
+    console.log(window.scrollY);
+    window.scrollTo(0, 810);
+}
+            
+
+            // function searchProduct(item){
+            //     console.log(item)
+            //     let valueSearch = document.getElementById("search").value;
+            //     if(valueSearch){
+                    
+            //         let products = JSON.parse(localStorage.getItem('products'))
+            //         let productSearch = products.filter(value => {
+            //               return value.title.toLowerCase().includes(valueSearch.toLowerCase());
+            //         });
+            //         document.getElementsByClassName("category-right").innerHTML= "";
+            //         console.log('HHHHH')
+                
+
+            //     }
+            // }
+</script>
+<script>
+    const header=document.querySelector("header")
+    window.addEventListener("scroll",function(){
+        x = window.pageYOffset
+        if(x>0){
+            header.classList.add("sticky")
+        }
+        else{
+            header.classList.remove("sticky")
+        }
+    })
+    const imgPosition = document.querySelectorAll(".aspect-ratio-169 img")
+    const  imgContainer = document.querySelector('.aspect-ratio-169')
+    const dotItem =document.querySelectorAll(".dot")
+    let imgNumber = imgPosition.length
+    let index =0
+//console.log(imgPosition)
+imgPosition.forEach(function(image,index){
+    image.style.left = index*100 + "%"
+    dotItem[index].addEventListener("click",function(){
+slider(index)
+    })
+
+    
+})
+function imgSlide(){
+    index++;
+    console.log(index)
+        if(index>=imgNumber){index=0}
+        slider(index)
+    }
+function slider(index) {
+    imgContainer.style.left= "-" +index*100+ "%"
+    const dotActive= document.querySelector('.active')
+    dotActive.classlist.remove("active")
+    dotItem[index].classlist.add("active")
+}
+setInterval(imgSlide,5000)
+</script>
+
+<script>
+    function toggleMenu() {
+        var header = document.querySelector('header');
+        var menu = document.querySelector('.menu');
+        header.classList.toggle('menu_open');
+        menu.style.display = menu.style.display === 'none' || menu.style.display === '' ? 'flex' : 'none';
+
+    }
+</script>
+
+<script src="js/main.js"></script>
+</html>

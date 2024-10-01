@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src=""></script>
+    <link rel="shortcut icon" href="guitar.ico" type="image/x-icon">
+    <title>Guitar Shop</title>
+    <link rel="stylesheet" href="category.html">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="js/admin.js"></script>
+    <script src="js/cart.js"></script>
+</head>
+<body >
+
+   <div class="main">
+
+    <div class="menu">
+    <li><a class="item-link" href=""></a></li>
+    <li><a class="item-link" href=""></a></li>
+    <li><a class="item-link"href=""></a></li>
+    <li><a class="item-link"href=""></a></li>
+
+    </div>
+    <header>
+            
+             
+        <a class="logo" href="index.html">GUITAR<span>.</span></a>
+
+        <div class="menu">
+            <li><a href="index.html" class="item">Trang chủ</a></li>
+            <li> <a  href="gioithieu.html">Giới thiệu</a>
+                
+            </li>
+            <li class="item">
+                <a class="item-link" href=""onclick="changeRoll()">Guitar acoustic</a> 
+                <ul class="sub-menu">
+                    <li class="sub-item"><a class="sub-item-link" href="" onclick="changeRoll()">Taylor</a></li>
+                    <li class="sub-item"><a class="sub-item-link" href=""onclick="changeRoll()">Fender-acoustic</a></li>
+                    <li class="sub-item"><a class="sub-item-link" href=""onclick="changeRoll()">Takamine-acoustic</a></li>
+                    <li class="sub-item"><a class="sub-item-link" href=""onclick="changeRoll()">Suzuki</a></li>
+                </ul> 
+            </li>
+            <li class="item">
+                <a class="item-link" href="" onclick="changeRoll()">Guitar classic</a> 
+                <ul class="sub-menu">
+                    <li class="sub-item"><a class="sub-item-link" href=""onclick="changeRoll()">Ortega</a></li>
+                    <li class="sub-item"><a class="sub-item-link" href=""onclick="changeRoll()">Takamine-classic</a></li>
+                    <li class="sub-item"><a class="sub-item-link" href=""onclick="changeRoll()">Fender-classic</a></li>
+                    <li class="sub-item"><a class="sub-item-link" href=""onclick="changeRoll()">Cordoba</a></li>
+                
+                </ul>
+            </li>
+            <li class="item">
+                <a class="item-link" href=""onclick="changeRoll()">Guitar điện</a> 
+                <ul class="sub-menu">
+                    <li class="sub-item"><a class="sub-item-link" href=""onclick="changeRoll()">Fender-điện</a></li>
+                    <li class="sub-item"><a class="sub-item-link" href=""onclick="changeRoll()">Jackson</a></li>
+                    <li class="sub-item"><a class="sub-item-link" href=""onclick="changeRoll()">Squier</a></li>
+                    <li class="sub-item"><a class="sub-item-link" href=""onclick="changeRoll()">Charvel</a></li>
+                
+                </ul>
+            </li>
+        
+            
+        </div>
+        <div class="others">
+            
+            <div class="others-search">
+                <input type="text" placeholder="Tìm kiếm" id="search" class="others__search-inp " style="color: #000">
+                <div class="btn-search" ><i class="fas fa-search"></i></div>    
+            </div>
+            <li>
+                <a class="" href="form_Login.html">
+                    <i class="fa fa-user"></i>
+                    <span class="others-usrname">Đăng nhập</span>
+                </a>
+            </li>
+            <li> <a  href="cart.html">
+                <i class="fa fa-shopping-bag"></i>
+                </a> 
+            </li>
+            <li class="others-bars"> 
+                <a class="fa fa-list-ul" href=""></a>
+                    <ul class="sub-list">
+                        <li> <a  href="acount.html">
+                            <i class="fa-solid fa-user" style="color: #000000;"></i>
+                             Tài khoản </a> 
+                    </li>
+                        <li> <a  href="" onclick="logout()">
+                                <i class="fa fa-sign-out-alt"></i>
+                                đăng xuất </a> 
+                        </li>
+                    </ul>
+                </li>
+        </ul>
+        </ul>
+    <!--- <span id="hamburger-btn"><i class="fa-solid fa-bars" style="color: #000000;"></i></span>   -->
+        
+    </header>
+
+ <section class="content_introduce">
+            <h1 class="title">Giới thiệu</h1>
+            <br>
+            <h3>TỔNG QUAN</h3>
+            <div class="page-info">
+                <p>
+                    Công ty Cổ Phần TM-DV-SX Guitar (Guitar Music) được ra đời vào năm 1993 và thành lập chính thức vào năm 1996 với khởi nguồn từ Trường Suối Nhạc – trường tư thục âm nhạc đầu tiên tại Việt Nam. <br>
+<br>
+Tương tự như hệ thống phân phối nhạc cụ, chúng tôi phát triển thương hiệu Suối Nhạc phủ rộng tại nhiều địa bàn trong cả nước để đáp ứng nhu cầu học nhạc. Danh mục sản phẩm đầu tiên của Guitar shop là những cây Đàn organ và Piano mới toanh của Casio và Kawai Nhật Bản được giới thiệu tại thị trường Việt Nam. 
+                </p>
+            </div>
+            <img src="./4.jpg" alt="">
+
+            <div class="page-info">
+                Là một trong những công ty phân phối Nhạc cụ có mặt đầu tiên tại thị trường Việt Nam, Guitar Music (GM) luôn nỗ lực phát triển bền vững và cùng Việt Nam “Tiến tới tương lai”. Với nền tảng kiến thức âm nhạc, sự kết hợp làm việc của toàn thể nhân viên dựa trên phương châm Quyền lợi của Khách hàng là quan trọng nhất, GM đã, đang và sẽ không ngừng cung cấp cho đối tác và người tiêu dùng giá trị đích thực với những Sản phẩm và Dịch vụ có chất lượng cao đạt tiêu chuẩn quốc tế với mức giá hợp lý nhất và dịch vụ sau bán hàng hoàn hảo. Chúng tôi tin tưởng sẽ luôn mang đến sự hài lòng cao nhất cho khách hàng, cũng như đóng góp tích cực cho sự phát triển của ngành Âm nhạc Việt Nam.
+            <br><br>
+            Sau gần 30 năm hoạt động, GM đã không ngừng lớn mạnh và liên tục phát triển không chỉ về quy mô sản xuất, mà cả doanh số bán hàng. Hiện tại, Guitar Music đã trở thành một trong những nhà cung cấp và phân phối nhạc cụ hàng đầu tại Việt Nam và trong khu vực. Từ những khởi đầu khiêm tốn vào năm 1996, công ty đã phát triển lên vị trí dẫn đầu và tự hào với mạng lưới Đại lý, Showroom và hệ thống giáo dục âm nhạc rộng khắp cả nước.
+        <br>
+
+        </div>
+            <img src="./7.jpg" alt="">
+        <div class="page-info">
+
+        </div>
+
+
+
+        </section>
+
+   </div>
+
+
+   
+    
+   
+       
+        
+   </section>
+    
+    <hr  width="100%" />
+    
+<section class="app-container">
+    
+    <p>Tải ứng dụng GuiApp</p>
+    <div class="app-google">
+        <img src="CH.jpg" alt="">
+
+        <img src="appstore.jpg" alt="">
+    </div>
+    <p>Nhận bản tin </p>
+    <input type="text" placeholder="Nhập email của bạn...">
+</section>
+<div class="footer-top">
+    <li><a href=""><img src="bocongthuong.jpg" alt=""></a></li>
+    <li><a href=""></a>Liên hệ</li> 
+    <li><a href=""></a>Tuyển dụng</li>
+    <li><a href=""></a>Giới thiệu</li> 
+    <li>
+        <a href="" class="fab fa-facebook-f"></a>
+        <a href="" class="fab fa-twitter"></a>
+        <a href="" class="fab fa-youtube"></a>
+    </li>
+</div>
+<div class="footer-center">
+    <p>Công ty cổ phần với số đăng ky kinh doanh:0123456789 <br>
+        Địa chỉ đăng ký: Đường Bình Tiên,Quận 6, TP.HCM, Việt Nam -0987654321 <br>
+        Đặt hàng online: <b>1234567890</b>
+        </p>
+</div>
+    
+    <div class="footer-bottom">
+        @GUITAR All rights reserved
+    </div>
+
+    <div id="modal" class="">
+        <div class="modal__content">
+            <div class="modal__header">
+                <div class="modal__close">
+                    <i class="fa fa-close"></i>
+                </div>
+            </div>
+            <div class="modal__body" id="modal__body">
+            
+            </div>
+        </div>
+        <!-- <div class="modal__overlay"></div> -->
+    </div>
+</body>
+<script>
+
+function changeRoll() {
+    console.log(window.scrollY);
+    window.scrollTo(0, 810);
+}
+            
+
+            // function searchProduct(item){
+            //     console.log(item)
+            //     let valueSearch = document.getElementById("search").value;
+            //     if(valueSearch){
+                    
+            //         let products = JSON.parse(localStorage.getItem('products'))
+            //         let productSearch = products.filter(value => {
+            //               return value.title.toLowerCase().includes(valueSearch.toLowerCase());
+            //         });
+            //         document.getElementsByClassName("category-right").innerHTML= "";
+            //         console.log('HHHHH')
+                
+
+            //     }
+            // }
+</script>
+<script>
+    const header=document.querySelector("header")
+    window.addEventListener("scroll",function(){
+        x = window.pageYOffset
+        if(x>0){
+            header.classList.add("sticky")
+        }
+        else{
+            header.classList.remove("sticky")
+        }
+    })
+    const imgPosition = document.querySelectorAll(".aspect-ratio-169 img")
+    const  imgContainer = document.querySelector('.aspect-ratio-169')
+    const dotItem =document.querySelectorAll(".dot")
+    let imgNumber = imgPosition.length
+    let index =0
+//console.log(imgPosition)
+imgPosition.forEach(function(image,index){
+    image.style.left = index*100 + "%"
+    dotItem[index].addEventListener("click",function(){
+slider(index)
+    })
+
+    
+})
+function imgSlide(){
+    index++;
+    console.log(index)
+        if(index>=imgNumber){index=0}
+        slider(index)
+    }
+function slider(index) {
+    imgContainer.style.left= "-" +index*100+ "%"
+    const dotActive= document.querySelector('.active')
+    dotActive.classlist.remove("active")
+    dotItem[index].classlist.add("active")
+}
+setInterval(imgSlide,5000)
+</script>
+
+
+
+<script src="main.js"></script>
+<script src="init.js"></script>
+
+</html>

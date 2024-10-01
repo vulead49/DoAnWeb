@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng nhập</title>
+    <link rel="shortcut icon" href="guitar-icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="form.css" />
+    <link rel="stylesheet" href="./cc/fontawesome-free-6.4.2-web/css/all.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <script src="js/admin.js"></script>
+  </head>
+  <body>
+    <div class="cont" id="content">
+      <div class="form__auth">
+        <form action="" class="form" id="form-1">
+          <div class="btn__exit-button" id="close">
+            <a href="index.html"> <i class="fa fa-reply" aria-hidden="true"></i> Về trang chủ </a>
+          </div>
+          <div class="header">
+            <i class="fa-solid fa-circle-user header-icon"></i>
+            <p class="header__text">ĐĂNG NHẬP</p>
+          </div>
+          <div class="line"></div>
+          <div class="form__wrapper">
+            <div class="form__input">
+              <input
+                type="text"
+                id="username"
+                name="username"
+                class="form__wrapper-input"
+                placeholder="Nhập Số Điện Thoại"
+                pattern="[0][0-9]{10}"
+              />
+              <i
+                class="fa-solid fa-phone form__icon"
+                style="color: #292929"
+              ></i>
+              <span class="form__message"></span>
+            </div>
+            <div class="form__input">
+              <input
+                type="password"
+                id="Password"
+                name="password"
+                class="form__wrapper-input"
+                placeholder="Mật Khẩu"
+                
+              />
+              <i
+                class="fa-solid fa-eye form__icon"
+                id="iconPWD_hide"
+                style="color: #292929"
+                
+              ></i>
+              <i
+                class="fa-solid fa-eye-slash form__icon"
+                id="iconPWD"
+                style="color: #292929"
+              ></i>
+              <span class="form__message"></span>
+            </div>
+          </div>
+
+          <div class="btn">
+            <input
+              id="login-btn"
+              class="btn__submit"
+              onclick="loginuser()"
+              type="submit"
+              value="Đăng Nhập"
+            />
+          </div>
+
+          <div class="footer">
+            <!-- <div>
+              <a href="form_ResetPwd.html" class="footer__sign"
+                >Quên mật khẩu?</a
+              >
+            </div> -->
+            <div>
+              <p class="footer__text">Bạn chưa có tài khoản?</p>
+            </div>
+            <div>
+              <a href="form_Signup.html" class="footer__sign">Đăng Kí</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="form.js"></script>
+    <script src="validator.js"></script>
+    <script>
+      Validator({
+        form: "#form-1",
+        errorSelector: ".form__message",
+        rules: [Validator.isPhoneNumber("#username")],
+      });
+    </script>
+    
+  </script>
+  </body>
+</html>

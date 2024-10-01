@@ -1,0 +1,182 @@
+<span style="font-family: verdana, geneva, sans-serif"
+  ><!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <link rel="shortcut icon" href="guitar-icon.ico" type="image/x-icon">
+      <title> Quản lí người dùng </title>
+      <link rel="stylesheet" href="manage-user.css" />
+      <link rel="stylesheet" href="./style.css" />
+      <script src="js/admin.js"></script>
+      <!-- Font Awesome Cdn Link -->
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      />
+      <script src="js/admin.js"></script>
+      <style>
+        .input-form {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+          margin-bottom: 20px;
+        }
+
+        h4 {
+          margin: 0;
+        }
+
+        input {
+          margin-top: 5px;
+          height: 20px;
+        }
+      </style>
+    </head>
+    <body>
+      <script>
+        window.onload = function () {
+          checkUser()
+          showUserList();
+        };
+      </script>
+      <div class="container">
+        <nav>
+          <div class="logoshop">
+            <img src="guitar.jpg" alt="hinhanh">
+          </div>
+          <div class="side_navbar">
+            
+              <span>Main Menu</span>
+          
+            <a href="user_manage.html"class="active"> <i class="fa fa-user-circle"></i> User </a>
+            <a href="product_manage.html"> <i class="fa-solid fa-guitar"></i> Product </a>
+            <a href="order_manage.html"> <i class="fa fa-shopping-bag"> </i> Orders </a>
+            <a href="" onclick="logout()"> <i class="fa fa-sign-out" ></i> Logout (Home)</a>
+
+            <!-- <a href="#">History</a>
+            <a href="#">Application</a>
+            <a href="#">My Account</a>
+            <a href="#">Documnets</a> -->
+
+            <!-- <div class="links">
+              <span>Quick Link</span>
+              <a href="#">Paypal</a>
+              <a href="#">EasyPay</a>
+              <a href="#">SadaPay</a>
+            </div> -->
+          </div>
+        </nav>
+<!-- số lượng từng loại sản phẩm đã mua và đơn giá -->
+        <div class="main-body">
+          <div class="history_lists">
+            <div class="list1">
+              <div class="row">
+                <h4>User Manage</h4>
+              </div>
+              <div class="input-form">
+                <div>
+                  <h4>Username</h4>
+                  <input
+                    id="username"
+                    type="text"
+                    name="username"
+                    placeholder="Username"
+                  />
+                </div>
+
+                <div>
+                  <h4>Email</h4>
+                  <input
+                    id="email"
+                    type="text"
+                    name="email"
+                    placeholder="Email"
+                  />
+                </div>
+
+                <div>
+                  <h4>Fullname</h4>
+                  <input
+                    id="fullname"
+                    type="text"
+                    name="fullname"
+                    placeholder="Fullname"
+                  />
+                </div>
+
+                <div>
+                  <h4>Password</h4>
+                  <input
+                    id="password"
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                  />
+                </div>
+
+                <div>
+                  <h4>Type</h4>
+                  <input id="type" type="text" name="type" placeholder="Type" />
+                </div>
+
+                <div>
+                  <h4>Address</h4>
+                  <input
+                    id="address"
+                    type="text"
+                    name="address"
+                    placeholder="Address"
+                  />
+                </div>
+              </div>
+              <table class="tb-container">
+                <button
+                  class="btn-action"
+                  style="float: right"
+                  onclick="createUser()"
+                >
+                  Thêm
+                </button>
+                <button
+                  class="btn-action"
+                  style="float: right"
+                  onclick="updateUser()"
+                >
+                  Cập nhật
+                </button>
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Fullname</th>
+                    <th>Password</th>
+                    <th>Address</th>
+                    <th>Type</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="list-user">
+                  <!-- <tr>
+                    <td>1</td>
+                    <td>2, Aug, 2022</td>
+                    <td>Sam Tonny</td>
+                    <td>Premimum</td>
+                    <td>$2000.00</td>
+                    <td>923</td>
+                    <td style="float: left">
+                      <button class="btn-action" onclick="" onclick="deleteuser(\''+userArray[i].username+'\')">Xóa</button>
+                      <button class="btn-action" onclick="suaUser(\''+userArray[i].username+'\')">Sửa</button>
+                    </td>
+                  </tr> -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+  </html>
+</span>

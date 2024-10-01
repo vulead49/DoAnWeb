@@ -1,0 +1,196 @@
+<span style="font-family: verdana, geneva, sans-serif"
+  ><!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <link rel="shortcut icon" href="guitar-icon.ico" type="image/x-icon">
+      <title>Quản lí sản phẩm</title>
+      <link rel="stylesheet" href="manage-user.css" />
+      <link rel="stylesheet" href="./style.css" />
+      <!-- Font Awesome Cdn Link -->
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      />
+      <script src="js/product_admin.js"></script>
+     
+      <style>
+        .input-form {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+          margin-bottom: 20px;
+        }
+
+        h4 {
+          margin: 0;
+        }
+
+        input {
+          margin-top: 5px;
+          height: 20px;
+        }
+      </style>
+    </head>
+    <body>
+      <script>
+        window.onload = function () {
+          checkUser()
+          showUserList();
+        };
+      </script>
+      <div class="container">
+        <nav>
+          <div class="logoshop">
+            <img src="guitar.jpg" alt="hinhanh">
+          </div>
+          <div class="side_navbar">
+            <span>Main Menu</span>
+            <a href="user_manage.html"> <i class="fa fa-user-circle"></i> User </a>
+            <a href="product_manage.html" class="active"> <i class="fa-solid fa-guitar"></i> Product </a>
+            <a href="order_manage.html"> <i class="fa fa-shopping-bag"> </i> Orders </a>
+            <a onclick="logout()" > <i class="fa fa-sign-out" ></i> Logout (Home)</a>
+
+            <!-- <a href="#">History</a>
+            <a href="#">Application</a>
+            <a href="#">My Account</a>
+            <a href="#">Documnets</a> -->
+
+            <!-- <div class="links">
+              <span>Quick Link</span>
+              <a href="#">Paypal</a>
+              <a href="#">EasyPay</a>
+              <a href="#">SadaPay</a>
+            </div> -->
+          </div>
+        </nav>
+        <!-- xem lại thông tin đơn hàng bao gồm thông tin người dùng tổng số tiền, phương thức thanh toán -->
+        <div class="main-body">
+          <div class="history_lists">
+            <div class="list1">
+              <div class="row">
+                <h4>Product Manage</h4>
+              </div>
+              <div class="input-form">
+                <div>
+                  <h4>Tên sản phẩm </h4>
+                  <input
+                    id="title"
+                    type="text"
+                    name="title"
+                    placeholder="Tên sản phẩm "
+                  />
+                </div>
+
+                <div>
+                  <h4>Giá</h4>
+                  <input
+                    id="price"
+                    type="number"
+                    name="price"
+                    placeholder="Giá"
+                  />
+                </div>
+
+                <div>
+                  <h4>Chi tiết</h4>
+                  <input
+                    id="details"
+                    type="text"
+                    name="details"
+                    placeholder="Chi tiết"
+                  />
+                </div>
+
+                <div>
+                  <h4>Danh mục</h4>
+                  <input
+                    id="categoryMain"
+                    type="text"
+                    name="categoryMain"
+                    placeholder="Danh mục"
+                  />
+                </div>
+                <div>
+                  <h4>Hình ảnh</h4>
+                  <input
+                      id="img"
+                      type="image"
+                      name="img"
+                      placeholder="Hình ảnh"
+                      style="max-width: 300px; max-height: 300px;"
+                      onclick="document.getElementById('fileInput').click()"
+                  />
+                  <button id="uploadButton" onclick="document.getElementById('fileInput').click()">Chọn ảnh</button>
+                  <input type="file" id="fileInput" name="fileInput" accept="image/*" onchange="handleFileUpload(this.files)" style="display:none;">
+              </div>
+               
+              </div>
+              <table class="tb-container">
+                <button
+                  class="btn-action"
+                  style="float: right"
+                  onclick="createUser()"
+                >
+                  Thêm
+                </button>
+                <button
+                  class="btn-action"
+                  style="float: right"
+                  onclick="updateUser()"
+                >
+                  Cập nhập
+                </button>
+                <thead>
+                  <tr>
+                    <th>Mã sản phẩm</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Giá</th>
+                    <th>Chi tiết</th>
+                    <th>Danh mục</th>
+                    <th>Hình ảnh</th>
+                  </tr>
+                </thead>
+                <tbody id="list-user">
+                  <!-- <tr>
+                    <td>1</td>
+                    <td>2, Aug, 2022</td>
+                    <td>Sam Tonny</td>
+                    <td>Premimum</td>
+                    <td>$2000.00</td>
+                    <td>923</td>
+                    <td style="float: left">
+                      <button class="btn-action" onclick="" onclick="deleteuser(\''+userArray[i].username+'\')">Xóa</button>
+                      <button class="btn-action" onclick="suaUser(\''+userArray[i].username+'\')">Sửa</button>
+                    </td>
+                  </tr> -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </body>
+  </html>
+</span>
+
+
+<script>
+  function handleFileUpload(files) {
+      var hinhanhInput = document.getElementById('img');
+
+      if (files && files[0]) {
+          var reader = new FileReader();
+
+          reader.onload = function(e) {
+              // Cập nhật thuộc tính src của thẻ input image
+              hinhanhInput.src = e.target.result;
+          };
+
+          reader.readAsDataURL(files[0]);
+      }
+  }
+</script>

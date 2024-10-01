@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý đơn hàng</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="manage-user.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <script src="js/admin.js"></script>
+    <script src="js/delivery.js"></script>
+    <script src="js/ordercheck.js"></script>
+</head>
+<body onload="loadCart2()">
+   
+   <div class="container">
+    <nav>
+        <div class="logoshop">
+            <img src="guitar.jpg" alt="hinhanh">
+        </div>
+        <div class="side_navbar">
+            <span>Main Menu</span>
+          <a href="user_manage.html"> <i class="fa fa-user-circle"></i> User </a>
+          <a href="product_manage.html"> <i class="fa-solid fa-guitar"></i> Product </a>
+          <a href="order_manage.html" class="active"> <i class="fa fa-shopping-bag"> </i> Orders </a>
+          <a href="" onclick="logout()"> <i class="fa fa-sign-out" ></i> Logout (Home)</a>
+        </div>
+    </nav>
+    
+    <div class="main-body">
+        <div class="order-container">
+            <div class="order-header"> Quản lý đơn hàng </div>
+                <div class="order-body">
+        <table>
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Mã hóa đơn</th>
+                    <th>Tên</th>
+                    <th>email</th>
+                    <th>Địa chỉ</th>
+                    <th>SĐT</th>
+                    <th>Ngày đặt</th>
+                    <th>Trạng thái</th>
+                    <th>Hành động</th>
+                    <th>Xem chi tiết</th>
+                </tr>
+            </thead>
+            <tbody id="orderList">
+                <!-- <tr>
+                    <td>1</td>
+                    <td>132</td>
+                    <td>nguyen hoang tuan kiet</td>
+                    <td>kiet@gmail.com</td>
+                    <td>tphcm</td>
+                    <td>0123123123</td>
+                    <td>12-5-2023</td>
+                    <td>chua xu li</td>
+                    <td><button>xoa</button></td>
+                    <td>xem chi tiet</td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+   </div>
+
+   <div class="order-check-container">
+    
+   </div>
+   </div>
+   <!-- <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="modalContent"></div>
+    </div>
+  </div> -->
+  <script>
+    window.onload = function () {
+      loadCart2()
+      checkUser()
+      showUserList();
+    };
+  </script>
+</body>
+</html>
+
+    </div>
